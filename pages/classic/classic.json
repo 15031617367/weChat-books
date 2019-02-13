@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "B-like":"../../componcents/like/index"
+  }
+}

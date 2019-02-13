@@ -1,0 +1,5 @@
+<!--componcents/like/index.wxml-->
+<view class="follow-mould"> 
+    <image src="{{likeBol?liked:like}}" bindtap='followBtn'></image>
+    <text>{{follow}}</text>
+</view>

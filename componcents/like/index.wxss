@@ -1,0 +1,9 @@
+/* componcents/like/index.wxss */
+.follow-mould image{
+  width: 32rpx;
+  height: 28rpx;
+}
+.follow-mould text{
+  color: #bbb;
+  font-size: 32rpx;
+}
