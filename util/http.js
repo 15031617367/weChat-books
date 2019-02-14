@@ -1,7 +1,8 @@
 /*
     微信ajax封装
 */
-import {config} from "/config.js"
+import {config} from "../config.js"
+
 class HTTP{
     request(params){
         //url、data、method
@@ -16,16 +17,25 @@ class HTTP{
                 "content-type":"application/json",
                 "appkey":config.appkey
             },
-            success:(responce)=>{
-                let code = responce.statusCode;
+            success:(response)=>{
+                let code = response.statusCode.toString();
                 if(code.startsWith("2")){
-                    
+                    params.success(response)
                 }else{
-
+                    wx.showToast({
+                        title: '错误' + code,
+                        icon:"none",
+                        duration:2000
+                    })
                 }
             },
             fail:(err)=>{
-                
+                let code = err.statusCode.toString();
+                wx.showToast({
+                    title: '错误'+code,
+                    icon: "none",
+                    duration: 2000
+                })
             }
         })
     }

@@ -1,3 +1,8 @@
+import { ClassicModel} from "../../models/classic.js"
+/*
+    实例化对象
+*/
+let classic=  new ClassicModel();
 // pages/classic/classic.js
 Page({
 
@@ -12,15 +17,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      wx.request({
-          url: 'http://bl.7yue.pro/v1/classic/latest',
-          header:{
-              appkey:'4hjM1xdf3CqJFjeK'
-          },
-          success:(respose)=>{
-              console.log(respose)
-          }
-      })
+    /*封装前*/
+    //   wx.request({
+    //       url: 'http://bl.7yue.pro/v1/classic/latest',
+    //       header:{
+    //           appkey:'4hjM1xdf3CqJFjeK'
+    //       },
+    //       success:(respose)=>{
+    //           console.log(respose)
+    //       }
+    //   })
+
+    /*封装后*/
+    // http.request({
+    //     url:"classic/latest",
+    //     success: (response)=>{
+    //         console.log(response)
+    //     }
+    // })
+
+    /*剥夺函数return的能力*/
+    let latest = calssic.getLatest((res)=>{
+        
+    })
+
 
   },
 
