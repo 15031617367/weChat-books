@@ -1,3 +1,10 @@
 <!--pages/classic/classic.wxml-->
-<!-- <B-like/> -->
+<B-like 
+    likeBol="{{classic.like_status}}" 
+    follow="{{classic.fav_nums}}"
+/>
+<B-movie 
+    img="{{classic.image}}" 
+    content="{{classic.content}}"
+/>
 

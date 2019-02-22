@@ -1,0 +1,6 @@
+<!--componcents/classic/movie/index.wxml-->
+<view class="classic-container">
+    <image class="classic-img" src="{{img}}"></image>
+    <image class="tag" src="images/moive@tag.png"></image>
+    <text class="content">{{content}}</text>
+</view>

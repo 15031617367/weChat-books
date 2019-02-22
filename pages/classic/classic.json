@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "B-like":"../../componcents/like/index"
+    "B-like":"/componcents/like/index",
+    "B-movie":"/componcents/classic/movie/index"
   }
 }

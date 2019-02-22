@@ -2,6 +2,7 @@
 Component({
   /**
    * 组件的属性列表
+   * 数据共有属性，其他组件可以更改或获取相应的值
    */
   properties: {
     likeBol:{
@@ -31,6 +32,7 @@ Component({
     followBtn(){
       var likeBol = this.properties.likeBol;
       var followinit = this.properties.follow;
+      
       if (likeBol){
         this.setData({
           follow: followinit-1,

@@ -10,7 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      classic:null,//点赞数据
   },
 
   /**
@@ -37,11 +37,12 @@ Page({
     // })
 
     /*剥夺函数return的能力*/
-    let latest = calssic.getLatest((res)=>{
-        
+    classic.getLatest((res)=>{
+        console.log(res.data)
+        this.setData({
+            classic:res.data
+        })
     })
-
-
   },
 
   /**
