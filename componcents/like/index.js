@@ -30,20 +30,25 @@ Component({
    */
   methods: {
     followBtn(){
-      var likeBol = this.properties.likeBol;
-      var followinit = this.properties.follow;
-      
-      if (likeBol){
-        this.setData({
-          follow: followinit-1,
-          likeBol:false
+        //自定义事件
+        var likeBol = this.properties.likeBol;
+        var followinit = this.properties.follow;
+        if (likeBol){
+            this.setData({
+                follow: followinit-1,
+                likeBol:false
+            })
+        }else{
+            this.setData({
+                follow: followinit + 1,
+                likeBol:true
+            })
+        };
+        //激活
+        let behavior = this.properties.likeBol?"like":"cancel"
+        this.triggerEvent('like',{
+            behavior:behavior
         })
-      }else{
-        this.setData({
-          follow: followinit + 1,
-          likeBol:true
-        })
-      }
     }
   }
 })

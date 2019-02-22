@@ -1,8 +1,9 @@
-import { ClassicModel} from "../../models/classic.js"
-/*
-    实例化对象
-*/
-let classic=  new ClassicModel();
+import { ClassicModel } from "../../models/classic.js"
+import { LikeModel } from "../../models/like.js"
+
+/*实例化对象*/
+let classicModel = new ClassicModel();
+let likeModel = new LikeModel();
 // pages/classic/classic.js
 Page({
 
@@ -12,6 +13,15 @@ Page({
   data: {
       classic:null,//点赞数据
   },
+
+    /*事件绑定*/
+    onLike(e) {
+        console.log("测试")
+        console.log(e)
+        console.log(e.detail.behavior);
+        let behavior = e.detail.behavior;
+        likeModel.like(behavior,this.data.classic.id,this.data.classic.type)
+    },
 
   /**
    * 生命周期函数--监听页面加载
@@ -37,14 +47,15 @@ Page({
     // })
 
     /*剥夺函数return的能力*/
-    classic.getLatest((res)=>{
-        console.log(res.data)
+      classicModel.getLatest((res)=>{
+        console.log(res)
         this.setData({
-            classic:res.data
+            classic:res
         })
     })
   },
 
+    
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
