@@ -16,11 +16,11 @@ Page({
 
     /*事件绑定*/
     onLike(e) {
-        console.log("测试")
-        console.log(e)
-        console.log(e.detail.behavior);
+        console.log("测试");
+        console.log(e);
         let behavior = e.detail.behavior;
-        likeModel.like(behavior,this.data.classic.id,this.data.classic.type)
+        likeModel.like(behavior,this.data.classic.id,                               this.data.classic.type)
+        console.log(behavior);
     },
 
   /**

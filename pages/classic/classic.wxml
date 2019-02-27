@@ -1,9 +1,17 @@
 <!--pages/classic/classic.wxml-->
-<B-like 
-    bind:like="onLike"
-    likeBol="{{classic.like_status}}" 
-    follow="{{classic.fav_nums}}"
-/>
+<view class="header">
+    <B-epsoide 
+        class="epsoide" 
+        index="{{classic.index}}"/>
+
+    <B-like 
+        class="like"
+        bind:like="onLike"
+        likeBol="{{classic.like_status}}" 
+        follow="{{classic.fav_nums}}"
+    />
+</view>
+
 <B-movie 
     img="{{classic.image}}" 
     content="{{classic.content}}"
